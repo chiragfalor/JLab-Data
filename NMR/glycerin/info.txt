@@ -1,0 +1,15 @@
+We are using t_90 as 15, freq 7.505 MHz
+And adjusted capacitance accordingly.
+
+We are gonna measure T2 for a variety of glycerin to water ratio
+Vary tau, measure spin echo amplitude. Which we use to measure T2.
+
+Each file is save as a csv with 5 amplitudes. 
+
+Systematic variance is 0.4 mV
+
+The samples are:
+80+- 0.39% glycerin
+60 +- 0.01% glycerin
+40 +- 0.06% glycerin
+20 +- 0.07% glycerin

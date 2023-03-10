@@ -1,0 +1,14 @@
+We are using t_90 as 21, freq 7.505 MHz
+And adjusted capacitance accordingly.
+
+
+We are gonna measure T1 for a variety of ferric chloride ration
+Vary tau, measure spin echo amplitude. Which we use to measure T1 using 3 pulse sequence
+
+Each file is save as a csv with 5 amplitudes. The name is the number of solution used
+
+Systematic variance is 0.4 mV
+
+The samples are all from Feb 2023:
+number 5
+number 7
