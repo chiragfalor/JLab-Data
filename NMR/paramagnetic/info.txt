@@ -12,3 +12,14 @@ Systematic variance is 0.4 mV
 The samples are all from Feb 2023:
 number 5
 number 7
+number 9
+number 11
+
+
+freq 7.5085 MHz, 
+P1 is 13 and P2 is 26
+
+new samples from Mar 2023:
+number 4
+number 6, for tau = 4, we had high sys unc. Measurement can be neglected. Systematic error for > 100 mV with error 1 mV
+

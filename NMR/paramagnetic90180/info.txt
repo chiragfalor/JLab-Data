@@ -1,0 +1,13 @@
+We are using t_90 as 13, freq 7.5165 MHz
+And adjusted capacitance accordingly.
+
+
+We are gonna measure T2 for a variety of ferric chloride ration
+Vary tau, measure spin echo amplitude. Which we use to measure T2 via 90 180
+
+Each file is save as a csv with 5 amplitudes. The name is the number of solution used
+
+Systematic variance is 0.4 mV
+
+The samples are all from Feb 2023:
+number 6
