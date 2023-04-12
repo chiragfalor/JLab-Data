@@ -20,7 +20,7 @@ Osc_X_data = [OpticalTrapData(file, data_dir = data_dir) for file in Osc_X_files
 
 # Mar22, brownian
 Brownian_1_files = [file for file in filename_list
-        if "Settings" not in file and file.startswith("Mar22") and "ox" not in file]
+        if "Settings" not in file and file.startswith("Mar22") and "ox" not in file and file.endswith(".txt")]
 Brownian_1_data = [OpticalTrapData(file, data_dir = data_dir) for file in Brownian_1_files]
 
 # Apr 3, fixed beads
@@ -38,11 +38,6 @@ Onion_files = [file for file in filename_list
         if "Settings" not in file and file.startswith("onion")]
 Onion_data = [OpticalTrapData(file, data_dir = data_dir) for file in Onion_files]
 
-
-
-print(Osc_X_files)
-
-Osc_X_data = [OpticalTrapData(file, data_dir = data_dir) for file in Osc_X_files]
 
 # plot QPDX
 # print(sample_data.QPDX.shape)
