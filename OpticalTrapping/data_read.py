@@ -16,24 +16,45 @@ filename_list = os.listdir(data_dir)
 # Oscillation Frequency 0.500000
 Osc_X_files = [file for file in filename_list 
         if "Settings" not in file and file.startswith("Mar22") and "ox" in file]
+Osc_X_data = [OpticalTrapData(file, data_dir = data_dir) for file in Osc_X_files]
 
 # Mar22, brownian
 Brownian_1_files = [file for file in filename_list
         if "Settings" not in file and file.startswith("Mar22") and "ox" not in file]
+Brownian_1_data = [OpticalTrapData(file, data_dir = data_dir) for file in Brownian_1_files]
+
+# Apr 3, fixed beads
+Fixed_beads_files = [file for file in filename_list
+        if "Settings" not in file and file.startswith("Apr3")]
+Fixed_beads_data = [OpticalTrapData(file, data_dir = data_dir) for file in Fixed_beads_files]
+
+# Apr 5, brownian
+Brownian_2_files = [file for file in filename_list
+        if "Settings" not in file and file.startswith("Apr5")]
+Brownian_2_data = [OpticalTrapData(file, data_dir = data_dir) for file in Brownian_2_files]
+
+# onion files
+Onion_files = [file for file in filename_list
+        if "Settings" not in file and file.startswith("onion")]
+Onion_data = [OpticalTrapData(file, data_dir = data_dir) for file in Onion_files]
+
+
 
 print(Osc_X_files)
-sample_data = OpticalTrapData(Osc_X_files[0], data_dir = data_dir)
+
+Osc_X_data = [OpticalTrapData(file, data_dir = data_dir) for file in Osc_X_files]
 
 # plot QPDX
-print(sample_data.QPDX.shape)
-print(sample_data.QPDX)
-plt.plot(sample_data.QPDX)
-plt.plot(sample_data.SGX)
+# print(sample_data.QPDX.shape)
+# print(sample_data.QPDX)
+# plt.plot(sample_data.QPDX)
+# plt.plot(sample_data.SGX)
 # calculate PSD
-f, Pxx = signal.welch(sample_data.QPDX, sample_data.sample_rate, nperseg = 1024)
-plt.figure()
-# log log 
-plt.loglog(f, Pxx)
-plt.xlabel("Frequency [Hz]")
-plt.ylabel("PSD [V**2/Hz]")
-plt.show()
+for sample_data in Osc_X_data:
+    f, Pxx = signal.welch(sample_data.QPDX, sample_data.sample_rate, nperseg = 1024)
+    plt.figure()
+    # log log 
+    plt.loglog(f, Pxx)
+    plt.xlabel("Frequency [Hz]")
+    plt.ylabel("PSD [V**2/Hz]")
+    plt.show()
